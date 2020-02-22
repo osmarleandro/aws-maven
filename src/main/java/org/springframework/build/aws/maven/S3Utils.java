@@ -21,7 +21,7 @@ import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
 
-final class S3Utils {
+final class S3Utils extends ExtractedSuperclass {
 
     private S3Utils() {
     }
