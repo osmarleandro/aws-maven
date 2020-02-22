@@ -163,7 +163,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
         } catch (IOException e) {
             throw new TransferFailedException(String.format("Cannot read from '%s' and write to '%s'", resourceName, destination), e);
         } finally {
-            IoUtils.closeQuietly(in, out);
+            Region.closeQuietly(in, out);
         }
     }
 
@@ -188,7 +188,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
         } catch (FileNotFoundException e) {
             throw new ResourceDoesNotExistException(String.format("Cannot read file from '%s'", source), e);
         } finally {
-            IoUtils.closeQuietly(in);
+            Region.closeQuietly(in);
         }
     }
 

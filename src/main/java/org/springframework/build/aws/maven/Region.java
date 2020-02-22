@@ -16,6 +16,9 @@
 
 package org.springframework.build.aws.maven;
 
+import java.io.Closeable;
+import java.io.IOException;
+
 enum Region {
     US("US", "s3.amazonaws.com"), //
     US_WEST_OREGON("us-west-2", "s3-us-west-2.amazonaws.com"), //
@@ -45,7 +48,19 @@ enum Region {
         return this.locationConstraint;
     }
 
-    static Region fromLocationConstraint(String locationConstraint) {
+    static void closeQuietly(Closeable... closeables) {
+	    for (Closeable closeable : closeables) {
+	        if (closeable != null) {
+	            try {
+	                closeable.close();
+	            } catch (IOException e) {
+	                // swallow the exception
+	            }
+	        }
+	    }
+	}
+
+	static Region fromLocationConstraint(String locationConstraint) {
         for (Region region : values()) {
             if (region.getLocationConstraint().equals(locationConstraint)) {
                 return region;
