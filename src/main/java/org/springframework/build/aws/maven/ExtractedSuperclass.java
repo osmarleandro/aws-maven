@@ -17,14 +17,6 @@
 package org.springframework.build.aws.maven;
 
 public class ExtractedSuperclass {
-    private String fieldToPushDown = "field to push down";
 
 
-    public String getFieldToPushDown() {
-        return fieldToPushDown;
-    }
-
-    public void setFieldToPushDown(String fieldToPushDown) {
-        this.fieldToPushDown = fieldToPushDown;
-    }
 }
