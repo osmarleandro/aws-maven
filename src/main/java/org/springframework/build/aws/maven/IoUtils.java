@@ -31,7 +31,11 @@ final class IoUtils {
     static void copy(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[BUFFER_SIZE];
 
-        int read;
+        extracted(in, out, buffer);
+    }
+
+	private static void extracted(InputStream in, OutputStream out, byte[] buffer) throws IOException {
+		int read;
 
         try {
             while ((read = in.read(buffer)) > 0) {
@@ -40,7 +44,7 @@ final class IoUtils {
         } finally {
             out.flush();
         }
-    }
+	}
 
     static void closeQuietly(Closeable... closeables) {
         for (Closeable closeable : closeables) {
