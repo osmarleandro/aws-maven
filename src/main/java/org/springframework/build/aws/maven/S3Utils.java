@@ -23,13 +23,7 @@ import org.apache.maven.wagon.repository.Repository;
 
 final class S3Utils extends ExtractedSuperclass {
 
-    private String fieldToPushDown = "field to push down";
-
     private S3Utils() {
-    }
-
-    static String getBucketName(Repository repository) {
-        return repository.getHost();
     }
 
     static String getBaseDirectory(Repository repository) {

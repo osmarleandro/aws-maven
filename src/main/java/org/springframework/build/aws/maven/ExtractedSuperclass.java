@@ -16,7 +16,14 @@
 
 package org.springframework.build.aws.maven;
 
+import org.apache.maven.wagon.repository.Repository;
+
 public class ExtractedSuperclass {
 
 
+    protected String fieldToPushDown = "field to push down";
+
+    static String getBucketName(Repository repository) {
+        return repository.getHost();
+    }
 }

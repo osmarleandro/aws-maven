@@ -79,7 +79,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
                     new AuthenticationInfoAWSCredentialsProviderChain(authenticationInfo);
             ClientConfiguration clientConfiguration = S3Utils.getClientConfiguration(proxyInfoProvider);
 
-            this.bucketName = S3Utils.getBucketName(repository);
+            this.bucketName = ExtractedSuperclass.getBucketName(repository);
             this.baseDirectory = S3Utils.getBaseDirectory(repository);
 
             this.amazonS3 = new AmazonS3Client(credentialsProvider, clientConfiguration);

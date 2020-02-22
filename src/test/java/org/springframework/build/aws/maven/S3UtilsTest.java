@@ -37,7 +37,7 @@ public final class S3UtilsTest {
 
     @Test
     public void getBucketName() {
-        assertEquals("dist.springsource.com", S3Utils.getBucketName(createRepository("/")));
+        assertEquals("dist.springsource.com", ExtractedSuperclass.getBucketName(createRepository("/")));
     }
 
     @Test
