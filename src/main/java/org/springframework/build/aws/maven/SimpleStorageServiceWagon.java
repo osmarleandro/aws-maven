@@ -83,7 +83,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
             this.baseDirectory = S3Utils.getBaseDirectory(repository);
 
             this.amazonS3 = new AmazonS3Client(credentialsProvider, clientConfiguration);
-            Region region = Region.fromLocationConstraint(this.amazonS3.getBucketLocation(this.bucketName));
+            RegionRenamed region = RegionRenamed.fromLocationConstraint(this.amazonS3.getBucketLocation(this.bucketName));
             this.amazonS3.setEndpoint(region.getEndpoint());
         }
     }
@@ -163,7 +163,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
         } catch (IOException e) {
             throw new TransferFailedException(String.format("Cannot read from '%s' and write to '%s'", resourceName, destination), e);
         } finally {
-            Region.closeQuietly(in, out);
+            RegionRenamed.closeQuietlyRenamed(in, out);
         }
     }
 
@@ -188,7 +188,7 @@ public final class SimpleStorageServiceWagon extends AbstractWagon {
         } catch (FileNotFoundException e) {
             throw new ResourceDoesNotExistException(String.format("Cannot read file from '%s'", source), e);
         } finally {
-            Region.closeQuietly(in);
+            RegionRenamed.closeQuietlyRenamed(in);
         }
     }
 

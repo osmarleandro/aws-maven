@@ -24,15 +24,15 @@ import java.io.OutputStream;
 final class IoUtils {
 
     /**
-	 * @deprecated Use {@link Region#BUFFER_SIZE} instead
+	 * @deprecated Use {@link RegionRenamed#BUFFER_SIZE_RENAMED} instead
 	 */
-	private static final int BUFFER_SIZE = Region.BUFFER_SIZE;
+	private static final int BUFFER_SIZE = RegionRenamed.BUFFER_SIZE_RENAMED;
 
     private IoUtils() {
     }
 
     static void copy(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[Region.BUFFER_SIZE];
+        byte[] buffer = new byte[RegionRenamed.BUFFER_SIZE_RENAMED];
 
         int read;
 		
@@ -58,10 +58,10 @@ final class IoUtils {
 	}
 
     /**
-	 * @deprecated Use {@link Region#closeQuietly(Closeable...)} instead
+	 * @deprecated Use {@link RegionRenamed#closeQuietlyRenamed(Closeable...)} instead
 	 */
 	static void closeQuietly(Closeable... closeables) {
-		Region.closeQuietly(closeables);
+		RegionRenamed.closeQuietlyRenamed(closeables);
 	}
 
 }

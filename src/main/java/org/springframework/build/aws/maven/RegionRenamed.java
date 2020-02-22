@@ -19,7 +19,7 @@ package org.springframework.build.aws.maven;
 import java.io.Closeable;
 import java.io.IOException;
 
-enum Region {
+enum RegionRenamed {
     US("US", "s3.amazonaws.com"), //
     US_WEST_OREGON("us-west-2", "s3-us-west-2.amazonaws.com"), //
     US_WEST_NORTHERN_CALIFORNIA("us-west-1", "s3-us-west-1.amazonaws.com"), //
@@ -35,9 +35,9 @@ enum Region {
 
     private final String endpoint;
 
-	static final int BUFFER_SIZE = 8192;
+	static final int BUFFER_SIZE_RENAMED = 8192;
 
-    private Region(String locationConstraint, String endpoint) {
+    private RegionRenamed(String locationConstraint, String endpoint) {
         this.locationConstraint = locationConstraint;
         this.endpoint = endpoint;
     }
@@ -50,7 +50,7 @@ enum Region {
         return this.locationConstraint;
     }
 
-    static void closeQuietly(Closeable... closeables) {
+    static void closeQuietlyRenamed(Closeable... closeables) {
 	    for (Closeable closeable : closeables) {
 	        if (closeable != null) {
 	            try {
@@ -62,8 +62,8 @@ enum Region {
 	    }
 	}
 
-	static Region fromLocationConstraint(String locationConstraint) {
-        for (Region region : values()) {
+	static RegionRenamed fromLocationConstraint(String locationConstraint) {
+        for (RegionRenamed region : values()) {
             if (region.getLocationConstraint().equals(locationConstraint)) {
                 return region;
             }

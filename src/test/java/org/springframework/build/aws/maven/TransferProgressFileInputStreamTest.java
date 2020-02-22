@@ -45,7 +45,7 @@ public final class TransferProgressFileInputStreamTest {
 
     @After
     public void closeStream() {
-        Region.closeQuietly(this.inputStream);
+        RegionRenamed.closeQuietlyRenamed(this.inputStream);
     }
 
     @Test
