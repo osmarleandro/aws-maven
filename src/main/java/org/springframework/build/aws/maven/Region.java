@@ -31,6 +31,7 @@ enum Region {
     ASIA_PACIFIC_TOKYO("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com"), //
     SOUTH_AMERICA_SAO_PALO("sa-east-1", "s3-sa-east-1.amazonaws.com");
 
+    static final int BUFFER_SIZE = 8192;
     private final String locationConstraint;
 
     private final String endpoint;

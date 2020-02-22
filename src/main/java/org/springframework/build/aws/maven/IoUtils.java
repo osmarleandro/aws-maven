@@ -16,20 +16,17 @@
 
 package org.springframework.build.aws.maven;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 final class IoUtils {
 
-    private static final int BUFFER_SIZE = 8192;
-
     private IoUtils() {
     }
 
     static void copy(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[BUFFER_SIZE];
+        byte[] buffer = new byte[Region.BUFFER_SIZE];
 
         int read;
 
