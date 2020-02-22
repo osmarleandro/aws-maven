@@ -35,6 +35,8 @@ enum Region {
 
     private final String endpoint;
 
+	static final int BUFFER_SIZE = 8192;
+
     private Region(String locationConstraint, String endpoint) {
         this.locationConstraint = locationConstraint;
         this.endpoint = endpoint;

@@ -23,13 +23,16 @@ import java.io.OutputStream;
 
 final class IoUtils {
 
-    private static final int BUFFER_SIZE = 8192;
+    /**
+	 * @deprecated Use {@link Region#BUFFER_SIZE} instead
+	 */
+	private static final int BUFFER_SIZE = Region.BUFFER_SIZE;
 
     private IoUtils() {
     }
 
     static void copy(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[BUFFER_SIZE];
+        byte[] buffer = new byte[Region.BUFFER_SIZE];
 
         int read;
 		
