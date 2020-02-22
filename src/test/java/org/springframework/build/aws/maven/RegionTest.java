@@ -36,11 +36,11 @@ public final class RegionTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void invalidLocationConstraint() {
-        Region.fromLocationConstraint("foo");
+        RegionRenamed.fromLocationConstraint("foo");
     }
 
     private void assertEndpoint(String locationConstraint, String endpoint) {
-        assertEquals(endpoint, Region.fromLocationConstraint(locationConstraint).getEndpoint());
+        assertEquals(endpoint, RegionRenamed.fromLocationConstraint(locationConstraint).getEndpoint());
     }
 
 }

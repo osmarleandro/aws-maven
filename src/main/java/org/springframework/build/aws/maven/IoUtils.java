@@ -26,7 +26,7 @@ final class IoUtils {
     }
 
     static void copy(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[Region.BUFFER_SIZE];
+        byte[] buffer = new byte[RegionRenamed.BUFFER_SIZE_RENAMED];
 
         int read;
 
