@@ -31,7 +31,15 @@ final class IoUtils {
     static void copy(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[BUFFER_SIZE];
 
-        extracted(in, out, buffer);
+        int read;
+		
+		try {
+		    while ((read = in.read(buffer)) > 0) {
+		        out.write(buffer, 0, read);
+		    }
+		} finally {
+		    out.flush();
+		}
     }
 
 	private static void extracted(InputStream in, OutputStream out, byte[] buffer) throws IOException {
