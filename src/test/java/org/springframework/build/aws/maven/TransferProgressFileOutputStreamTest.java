@@ -47,7 +47,7 @@ public final class TransferProgressFileOutputStreamTest {
 
     @After
     public void closeStream() {
-        IoUtils.closeQuietly(this.outputStream);
+        Region.closeQuietly(this.outputStream);
     }
 
     @Test

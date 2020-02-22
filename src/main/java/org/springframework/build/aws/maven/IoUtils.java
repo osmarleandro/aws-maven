@@ -42,16 +42,4 @@ final class IoUtils {
         }
     }
 
-    static void closeQuietly(Closeable... closeables) {
-        for (Closeable closeable : closeables) {
-            if (closeable != null) {
-                try {
-                    closeable.close();
-                } catch (IOException e) {
-                    // swallow the exception
-                }
-            }
-        }
-    }
-
 }
