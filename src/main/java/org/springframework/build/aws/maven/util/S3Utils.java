@@ -22,7 +22,7 @@ import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
 import org.springframework.build.aws.maven.ExtractedSuperclass;
 
-final class S3Utils extends ExtractedSuperclass {
+final class S3Utils extends ExtractedSuperclass implements ExtractedInterface {
 
     private S3Utils() {
     }
@@ -50,6 +50,7 @@ final class S3Utils extends ExtractedSuperclass {
         return clientConfiguration;
     }
 
+    @Override
     public String getFieldToPushDown() {
         return fieldToPushDown;
     }
