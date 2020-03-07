@@ -28,8 +28,8 @@ public final class NullProtectingProxyInfoProviderTest {
 
     private final ProxyInfo proxyInfo = mock(ProxyInfo.class);
 
-    private final NullProtectingProxyInfoProvider proxyInfoProvider =
-            new NullProtectingProxyInfoProvider(this.proxyInfo);
+    private final NullProtectingProxyInfoProviderRenamed proxyInfoProvider =
+            new NullProtectingProxyInfoProviderRenamed(this.proxyInfo);
 
     @Test
     public void getProxyInfoNullProtocol() {
@@ -38,7 +38,7 @@ public final class NullProtectingProxyInfoProviderTest {
 
     @Test
     public void getProxyInfoNullProxy() {
-        assertNull(new NullProtectingProxyInfoProvider(null).getProxyInfo("foo"));
+        assertNull(new NullProtectingProxyInfoProviderRenamed(null).getProxyInfo("foo"));
     }
 
     @Test

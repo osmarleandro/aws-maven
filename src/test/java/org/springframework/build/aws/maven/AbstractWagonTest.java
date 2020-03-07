@@ -123,7 +123,7 @@ public final class AbstractWagonTest {
         assertEquals(this.repository, this.wagon.getRepository());
         verify(this.sessionListenerSupport).fireSessionOpening();
         verify(this.wagon).connectToRepository(eq(this.repository), (AuthenticationInfo) isNull(),
-                any(NullProtectingProxyInfoProvider.class));
+                any(NullProtectingProxyInfoProviderRenamed.class));
         verify(this.sessionListenerSupport).fireSessionLoggedIn();
         verify(this.sessionListenerSupport).fireSessionOpened();
     }
@@ -157,7 +157,7 @@ public final class AbstractWagonTest {
         assertEquals(this.repository, this.wagon.getRepository());
         verify(this.sessionListenerSupport).fireSessionOpening();
         verify(this.wagon).connectToRepository(eq(this.repository), eq(this.authenticationInfo),
-                any(NullProtectingProxyInfoProvider.class));
+                any(NullProtectingProxyInfoProviderRenamed.class));
         verify(this.sessionListenerSupport).fireSessionLoggedIn();
         verify(this.sessionListenerSupport).fireSessionOpened();
 

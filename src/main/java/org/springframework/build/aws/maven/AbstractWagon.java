@@ -134,7 +134,7 @@ abstract class AbstractWagon implements Wagon {
     @Override
     public final void connect(Repository source, AuthenticationInfo authenticationInfo, ProxyInfo proxyInfo)
             throws ConnectionException, AuthenticationException {
-        connect(source, authenticationInfo, new NullProtectingProxyInfoProvider(proxyInfo));
+        connect(source, authenticationInfo, new NullProtectingProxyInfoProviderRenamed(proxyInfo));
     }
 
     @Override

@@ -19,11 +19,11 @@ package org.springframework.build.aws.maven;
 import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 
-final class NullProtectingProxyInfoProvider implements ProxyInfoProvider {
+final class NullProtectingProxyInfoProviderRenamed implements ProxyInfoProvider, org.springframework.build.aws.maven.util.NullProtectingProxyInfoProvider {
 
     private final ProxyInfo proxyInfo;
 
-    NullProtectingProxyInfoProvider(ProxyInfo proxyInfo) {
+    NullProtectingProxyInfoProviderRenamed(ProxyInfo proxyInfo) {
         this.proxyInfo = proxyInfo;
     }
 
