@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package org.springframework.build.aws.maven;
+package org.springframework.build.aws.maven.util;
 
 import com.amazonaws.ClientConfiguration;
 import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
+import org.springframework.build.aws.maven.SuperclassExtracted;
 
 final class S3Utils extends SuperclassExtracted {
 
