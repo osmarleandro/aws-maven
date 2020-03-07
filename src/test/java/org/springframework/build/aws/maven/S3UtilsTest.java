@@ -21,6 +21,7 @@ import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
 import org.junit.Test;
+import org.springframework.build.aws.maven.util.S3Utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

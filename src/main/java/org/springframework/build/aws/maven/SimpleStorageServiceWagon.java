@@ -28,6 +28,7 @@ import org.apache.maven.wagon.authentication.AuthenticationException;
 import org.apache.maven.wagon.authentication.AuthenticationInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
+import org.springframework.build.aws.maven.util.S3Utils;
 
 import java.io.*;
 import java.util.ArrayList;
