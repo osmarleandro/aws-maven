@@ -31,6 +31,7 @@ import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
 import org.apache.maven.wagon.resource.Resource;
 import org.junit.Test;
+import org.springframework.build.aws.maven.util.NullProtectingProxyInfoProviderRenamed;
 
 import java.io.File;
 import java.io.IOException;
@@ -123,7 +124,7 @@ public final class AbstractWagonTest {
         assertEquals(this.repository, this.wagon.getRepository());
         verify(this.sessionListenerSupport).fireSessionOpening();
         verify(this.wagon).connectToRepository(eq(this.repository), (AuthenticationInfo) isNull(),
-                any(NullProtectingProxyInfoProvider.class));
+                any(NullProtectingProxyInfoProviderRenamed.class));
         verify(this.sessionListenerSupport).fireSessionLoggedIn();
         verify(this.sessionListenerSupport).fireSessionOpened();
     }
@@ -157,7 +158,7 @@ public final class AbstractWagonTest {
         assertEquals(this.repository, this.wagon.getRepository());
         verify(this.sessionListenerSupport).fireSessionOpening();
         verify(this.wagon).connectToRepository(eq(this.repository), eq(this.authenticationInfo),
-                any(NullProtectingProxyInfoProvider.class));
+                any(NullProtectingProxyInfoProviderRenamed.class));
         verify(this.sessionListenerSupport).fireSessionLoggedIn();
         verify(this.sessionListenerSupport).fireSessionOpened();
 

@@ -18,6 +18,7 @@ package org.springframework.build.aws.maven;
 
 import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.junit.Test;
+import org.springframework.build.aws.maven.util.NullProtectingProxyInfoProviderRenamed;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -28,8 +29,8 @@ public final class NullProtectingProxyInfoProviderTest {
 
     private final ProxyInfo proxyInfo = mock(ProxyInfo.class);
 
-    private final NullProtectingProxyInfoProvider proxyInfoProvider =
-            new NullProtectingProxyInfoProvider(this.proxyInfo);
+    private final NullProtectingProxyInfoProviderRenamed proxyInfoProvider =
+            new NullProtectingProxyInfoProviderRenamed(this.proxyInfo);
 
     @Test
     public void getProxyInfoNullProtocol() {
@@ -38,7 +39,7 @@ public final class NullProtectingProxyInfoProviderTest {
 
     @Test
     public void getProxyInfoNullProxy() {
-        assertNull(new NullProtectingProxyInfoProvider(null).getProxyInfo("foo"));
+        assertNull(new NullProtectingProxyInfoProviderRenamed(null).getProxyInfo("foo"));
     }
 
     @Test

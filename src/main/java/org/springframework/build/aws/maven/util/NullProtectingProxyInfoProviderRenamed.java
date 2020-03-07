@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package org.springframework.build.aws.maven;
+package org.springframework.build.aws.maven.util;
 
 import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 
-final class NullProtectingProxyInfoProvider implements ProxyInfoProvider {
+final class NullProtectingProxyInfoProviderRenamed implements ProxyInfoProvider {
 
     private final ProxyInfo proxyInfo;
 
-    NullProtectingProxyInfoProvider(ProxyInfo proxyInfo) {
+    NullProtectingProxyInfoProviderRenamed(ProxyInfo proxyInfo) {
         this.proxyInfo = proxyInfo;
     }
 

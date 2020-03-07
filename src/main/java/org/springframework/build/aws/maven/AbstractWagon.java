@@ -30,6 +30,7 @@ import org.apache.maven.wagon.proxy.ProxyInfo;
 import org.apache.maven.wagon.proxy.ProxyInfoProvider;
 import org.apache.maven.wagon.repository.Repository;
 import org.apache.maven.wagon.resource.Resource;
+import org.springframework.build.aws.maven.util.NullProtectingProxyInfoProviderRenamed;
 
 import java.io.File;
 import java.util.List;
@@ -134,7 +135,7 @@ abstract class AbstractWagon implements Wagon {
     @Override
     public final void connect(Repository source, AuthenticationInfo authenticationInfo, ProxyInfo proxyInfo)
             throws ConnectionException, AuthenticationException {
-        connect(source, authenticationInfo, new NullProtectingProxyInfoProvider(proxyInfo));
+        connect(source, authenticationInfo, new NullProtectingProxyInfoProviderRenamed(proxyInfo));
     }
 
     @Override
